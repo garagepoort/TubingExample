@@ -1,7 +1,6 @@
-package be.garagepoort.tubingexample;
+package be.garagepoort.tubingexample.common.permissions;
 
 import be.garagepoort.mcioc.IocBean;
-import be.garagepoort.tubingexample.common.exceptions.NoPermissionException;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 

@@ -5,7 +5,7 @@ import be.garagepoort.mcioc.IocListener;
 import be.garagepoort.tubingexample.broadcasting.BroadcastedMessage;
 import be.garagepoort.tubingexample.broadcasting.MessageBroadcastedEvent;
 import be.garagepoort.tubingexample.broadcasting.bungee.BroadcastedMessageReceivedBungeeEvent;
-import be.garagepoort.tubingexample.common.Configuration;
+import be.garagepoort.tubingexample.config.Configuration;
 import be.garagepoort.tubingexample.common.MessageService;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;

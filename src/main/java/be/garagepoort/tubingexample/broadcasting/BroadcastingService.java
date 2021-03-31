@@ -1,7 +1,7 @@
 package be.garagepoort.tubingexample.broadcasting;
 
 import be.garagepoort.mcioc.IocBean;
-import be.garagepoort.tubingexample.PermissionManager;
+import be.garagepoort.tubingexample.common.permissions.PermissionManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;

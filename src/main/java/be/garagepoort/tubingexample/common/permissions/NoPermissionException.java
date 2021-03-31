@@ -1,4 +1,6 @@
-package be.garagepoort.tubingexample.common.exceptions;
+package be.garagepoort.tubingexample.common.permissions;
+
+import be.garagepoort.tubingexample.common.exceptions.BusinessException;
 
 public class NoPermissionException extends BusinessException {
     public NoPermissionException() {

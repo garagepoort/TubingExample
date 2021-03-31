@@ -12,11 +12,11 @@ import java.util.Optional;
 
 @IocBean(conditionalOnProperty = "tubing-example.broadcast-on-bungee=true")
 @IocMessageListener(channel = Constants.BUNGEE_CORD_CHANNEL)
-public class MessageBroadcastedBungeeNotifier implements PluginMessageListener {
+public class BroadcastedMessageBungeeReceiver implements PluginMessageListener {
 
     private final BungeeService bungeeService;
 
-    public MessageBroadcastedBungeeNotifier(BungeeService bungeeService) {
+    public BroadcastedMessageBungeeReceiver(BungeeService bungeeService) {
         this.bungeeService = bungeeService;
     }
 

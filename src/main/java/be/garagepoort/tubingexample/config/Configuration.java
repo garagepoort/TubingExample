@@ -1,4 +1,4 @@
-package be.garagepoort.tubingexample.common;
+package be.garagepoort.tubingexample.config;
 
 import be.garagepoort.mcioc.IocBean;
 import org.bukkit.configuration.file.FileConfiguration;

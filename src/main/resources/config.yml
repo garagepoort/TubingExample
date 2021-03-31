@@ -1,0 +1,4 @@
+tubing-example:
+  # When enabled, the message broadcasted will be send across the bungee network
+  broadcast-on-bungee: true
+  broadcast-prefix: "&C[BROADCAST] &6"

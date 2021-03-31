@@ -1,0 +1,11 @@
+main: be.garagepoort.tubingexample.TubingExample
+name: TubingExample
+version: ${project.version}
+description: Tubing simple example project
+author: Garagepoort
+api-version: 1.16
+commands:
+  broadcast:
+    description: Broadcasts a message to all players
+    usage: /<command>
+    aliases: [br]

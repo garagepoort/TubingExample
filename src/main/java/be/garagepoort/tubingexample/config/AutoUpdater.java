@@ -1,10 +1,9 @@
 package be.garagepoort.tubingexample.config;
 
-import com.google.common.base.Charsets;
+import be.garagepoort.tubingexample.TubingExample;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import be.garagepoort.tubingexample.TubingExample;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,6 +14,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class AutoUpdater {
 
@@ -40,25 +41,24 @@ public class AutoUpdater {
 
     private static Map<String, Object> loadConfig() {
         Map<String, Object> configurations = new HashMap<>();
-        InputStream defConfigStream = getResource(CONFIG_FILE);
+        InputStream defConfigStream = getResource();
         if (defConfigStream != null) {
-            YamlConfiguration yamlConfiguration = YamlConfiguration.loadConfiguration(new InputStreamReader(defConfigStream, Charsets.UTF_8));
+            YamlConfiguration yamlConfiguration = YamlConfiguration.loadConfiguration(new InputStreamReader(defConfigStream, UTF_8));
             Set<String> keys = yamlConfiguration.getKeys(true);
-            keys.forEach((k) -> configurations.put(k, yamlConfiguration.get(k)));
+            keys.forEach(k -> configurations.put(k, yamlConfiguration.get(k)));
         }
         return configurations;
     }
 
-    private static InputStream getResource(String filename) {
+    private static InputStream getResource() {
         try {
-            URL url = AutoUpdater.class.getClassLoader().getResource(filename);
+            URL url = AutoUpdater.class.getClassLoader().getResource(AutoUpdater.CONFIG_FILE);
             if (url == null) {
                 return null;
-            } else {
-                URLConnection connection = url.openConnection();
-                connection.setUseCaches(false);
-                return connection.getInputStream();
             }
+            URLConnection connection = url.openConnection();
+            connection.setUseCaches(false);
+            return connection.getInputStream();
         } catch (IOException var4) {
             return null;
         }

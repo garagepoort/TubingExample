@@ -12,17 +12,17 @@ import org.bukkit.event.Listener;
 
 @IocBean(conditionalOnProperty = "tubing-example.broadcast-on-bungee=true")
 @IocListener
-public class BroadcastedMessageSenderReceiver implements Listener {
+public class BroadcastedMessageBungeeSender implements Listener {
 
     private final BungeeService bungeeService;
 
-    public BroadcastedMessageSenderReceiver(BungeeService bungeeService) {
+    public BroadcastedMessageBungeeSender(BungeeService bungeeService) {
         this.bungeeService = bungeeService;
     }
 
     @EventHandler
     public void onBroadcast(MessageBroadcastedEvent messageBroadcastedEvent) {
         Player player = Bukkit.getOnlinePlayers().iterator().next();
-        bungeeService.sendMessage(player, Constants.BUNGEE_REPORT_MESSAGE_BROADCAST_CHANNEL, new BungeeBroadcastMessage(messageBroadcastedEvent.getBroadcastedMessage()));
+        bungeeService.sendMessage(player, Constants.BUNGEE_REPORT_MESSAGE_BROADCAST_CHANNEL, new BungeeBroadcastedMessage(messageBroadcastedEvent.getBroadcastedMessage()));
     }
 }

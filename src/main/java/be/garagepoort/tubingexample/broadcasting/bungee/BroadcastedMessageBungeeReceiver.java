@@ -10,6 +10,8 @@ import org.bukkit.plugin.messaging.PluginMessageListener;
 
 import java.util.Optional;
 
+import static be.garagepoort.tubingexample.common.Constants.BUNGEE_REPORT_MESSAGE_BROADCAST_CHANNEL;
+
 @IocBean(conditionalOnProperty = "tubing-example.broadcast-on-bungee=true")
 @IocMessageListener(channel = Constants.BUNGEE_CORD_CHANNEL)
 public class BroadcastedMessageBungeeReceiver implements PluginMessageListener {
@@ -22,7 +24,7 @@ public class BroadcastedMessageBungeeReceiver implements PluginMessageListener {
 
     @Override
     public void onPluginMessageReceived(String channel, Player player, byte[] message) {
-        Optional<BungeeBroadcastMessage> bungeeMessage = bungeeService.handleReceived(channel, Constants.BUNGEE_REPORT_MESSAGE_BROADCAST_CHANNEL, message, BungeeBroadcastMessage.class);
-        bungeeMessage.map(BungeeBroadcastMessage::getBroadcastedMessage).ifPresent(b -> Bukkit.getPluginManager().callEvent(new BroadcastedMessageReceivedBungeeEvent(b)));
+        Optional<BungeeBroadcastedMessage> bungeeMessage = bungeeService.handleReceived(channel, BUNGEE_REPORT_MESSAGE_BROADCAST_CHANNEL, message, BungeeBroadcastedMessage.class);
+        bungeeMessage.map(BungeeBroadcastedMessage::getBroadcastedMessage).ifPresent(b -> Bukkit.getPluginManager().callEvent(new BroadcastedMessageReceivedBungeeEvent(b)));
     }
 }

@@ -35,7 +35,7 @@ public class GuiBroadcaster implements Listener {
 
     private void broadcastMessage(BroadcastedMessage broadcastedMessage) {
         String message = broadcastedMessage.getMessage();
-        Bukkit.getOnlinePlayers().forEach(p -> messageService.sendMessage(p, configuration.getBroadcastPrefix() + message));
+        Bukkit.getOnlinePlayers().forEach(p -> messageService.sendMessage(p, configuration.broadcastPrefix + message));
     }
 
 }

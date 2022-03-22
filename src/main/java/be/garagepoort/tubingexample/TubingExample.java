@@ -1,7 +1,6 @@
 package be.garagepoort.tubingexample;
 
 import be.garagepoort.mcioc.TubingPlugin;
-import be.garagepoort.tubingexample.config.AutoUpdater;
 
 public class TubingExample extends TubingPlugin {
 
@@ -12,15 +11,17 @@ public class TubingExample extends TubingPlugin {
     }
 
     @Override
-    protected void enable() {
+    protected void beforeEnable() {
         plugin = this;
-        saveDefaultConfig();
-        AutoUpdater.updateConfig(this);
+    }
+
+    @Override
+    protected void enable() {
+        getLogger().info("TubingExample enabled");
     }
 
     @Override
     protected void disable() {
-        // no disabling logic
+        getLogger().info("TubingExample disabled");
     }
-
 }

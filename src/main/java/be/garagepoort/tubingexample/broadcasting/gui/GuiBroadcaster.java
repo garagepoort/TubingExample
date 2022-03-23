@@ -2,10 +2,10 @@ package be.garagepoort.tubingexample.broadcasting.gui;
 
 import be.garagepoort.mcioc.IocBean;
 import be.garagepoort.mcioc.IocListener;
+import be.garagepoort.mcioc.configuration.ConfigProperty;
 import be.garagepoort.tubingexample.broadcasting.BroadcastedMessage;
 import be.garagepoort.tubingexample.broadcasting.MessageBroadcastedEvent;
 import be.garagepoort.tubingexample.broadcasting.bungee.BroadcastedMessageReceivedBungeeEvent;
-import be.garagepoort.tubingexample.config.Configuration;
 import be.garagepoort.tubingexample.common.MessageService;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
@@ -15,12 +15,13 @@ import org.bukkit.event.Listener;
 @IocListener
 public class GuiBroadcaster implements Listener {
 
-    private final MessageService messageService;
-    private final Configuration configuration;
+    @ConfigProperty("tubing-example.broadcast-prefix")
+    private String broadcastPrefix;
 
-    public GuiBroadcaster(MessageService messageService, Configuration configuration) {
+    private final MessageService messageService;
+
+    public GuiBroadcaster(MessageService messageService) {
         this.messageService = messageService;
-        this.configuration = configuration;
     }
 
     @EventHandler
@@ -35,7 +36,6 @@ public class GuiBroadcaster implements Listener {
 
     private void broadcastMessage(BroadcastedMessage broadcastedMessage) {
         String message = broadcastedMessage.getMessage();
-        Bukkit.getOnlinePlayers().forEach(p -> messageService.sendMessage(p, configuration.broadcastPrefix + message));
+        Bukkit.getOnlinePlayers().forEach(p -> messageService.sendMessage(p, broadcastPrefix + message));
     }
-
 }

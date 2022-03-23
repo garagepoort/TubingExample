@@ -1,11 +1,12 @@
 package be.garagepoort.tubingexample.common.permissions;
 
 import be.garagepoort.mcioc.IocBean;
+import be.garagepoort.mcioc.permissions.TubingPermissionService;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @IocBean
-public class PermissionManager {
+public class PermissionManager implements TubingPermissionService {
 
     public void validatePermission(CommandSender player, String permission) {
         if (!has(player, permission)) {
@@ -19,5 +20,10 @@ public class PermissionManager {
         }
 
         return player.hasPermission(permission) || player.isOp();
+    }
+
+    @Override
+    public boolean has(Player player, String s) {
+        return false;
     }
 }

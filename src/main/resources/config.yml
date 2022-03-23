@@ -2,3 +2,8 @@ tubing-example:
   # When enabled, the message broadcasted will be send across the bungee network
   broadcast-on-bungee: true
   broadcast-prefix: "&C[BROADCAST] &6"
+  broadcast-messages:
+    - Restart in 10 minutes
+    - Restart in 5 minutes
+    - Restart in 1 minutes
+    - Network maintenance today

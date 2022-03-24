@@ -4,7 +4,7 @@
 
     <#list messages as message >
         <GuiItem id="broadcast-message-${message?index}"
-                 class="broadcast-message broadcast-message-${message}"
+                 class="broadcast-message"
                  slot="${message?index}"
                  material="PAPER"
                  onLeftClick="broadcast/send-message?message=${URLEncoder.encode(message)}">

@@ -18,7 +18,7 @@ import static be.garagepoort.tubingexample.common.Constants.BUNGEE_CORD_CHANNEL;
 public class BungeeService {
 
     public BungeeService() {
-        Bukkit.getServer().getMessenger().registerOutgoingPluginChannel(TubingExample.get(), BUNGEE_CORD_CHANNEL);
+        Bukkit.getServer().getMessenger().registerOutgoingPluginChannel(TubingExample.getPlugin(), BUNGEE_CORD_CHANNEL);
     }
 
     public void sendMessage(Player player, String channel, Object event) {
@@ -37,7 +37,7 @@ public class BungeeService {
             out.writeShort(msgbytes.toByteArray().length);
             out.write(msgbytes.toByteArray());
 
-            player.sendPluginMessage(TubingExample.get(), BUNGEE_CORD_CHANNEL, out.toByteArray());
+            player.sendPluginMessage(TubingExample.getPlugin(), BUNGEE_CORD_CHANNEL, out.toByteArray());
         } catch (IOException e) {
             e.printStackTrace();
         }

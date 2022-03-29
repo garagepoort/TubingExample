@@ -1,6 +1,5 @@
 package be.garagepoort.tubingexample.broadcasting.gui;
 
-import be.garagepoort.mcioc.IocBean;
 import be.garagepoort.mcioc.IocListener;
 import be.garagepoort.mcioc.configuration.ConfigProperty;
 import be.garagepoort.tubingexample.broadcasting.BroadcastedMessage;
@@ -11,7 +10,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
-@IocBean
 @IocListener
 public class GuiBroadcaster implements Listener {
 

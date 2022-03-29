@@ -1,6 +1,5 @@
 package be.garagepoort.tubingexample.broadcasting.bungee;
 
-import be.garagepoort.mcioc.IocBean;
 import be.garagepoort.mcioc.IocMessageListener;
 import be.garagepoort.tubingexample.common.Constants;
 import be.garagepoort.tubingexample.common.bungee.BungeeService;
@@ -12,8 +11,9 @@ import java.util.Optional;
 
 import static be.garagepoort.tubingexample.common.Constants.BUNGEE_REPORT_MESSAGE_BROADCAST_CHANNEL;
 
-@IocBean(conditionalOnProperty = "tubing-example.broadcast-on-bungee=true")
-@IocMessageListener(channel = Constants.BUNGEE_CORD_CHANNEL)
+@IocMessageListener(
+    channel = Constants.BUNGEE_CORD_CHANNEL,
+    conditionalOnProperty = "tubing-example.broadcast-on-bungee=true")
 public class BroadcastedMessageBungeeReceiver implements PluginMessageListener {
 
     private final BungeeService bungeeService;

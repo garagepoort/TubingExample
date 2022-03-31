@@ -105,7 +105,7 @@
         <dependency>
             <groupId>be.garagepoort.mcioc</groupId>
             <artifactId>tubing</artifactId>
-            <version>6.0.0</version>
+            <version>6.0.2</version>
             <exclusions>
                 <exclusion>
                     <groupId>*</groupId>
@@ -116,7 +116,7 @@
         <dependency>
             <groupId>be.garagepoort.mcioc</groupId>
             <artifactId>tubing-gui</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
     </dependencies>
 </project>

@@ -1,7 +1,7 @@
 package be.garagepoort.tubingexample.broadcasting.gui;
 
-import be.garagepoort.mcioc.IocListener;
 import be.garagepoort.mcioc.configuration.ConfigProperty;
+import be.garagepoort.mcioc.tubingbukkit.annotations.IocBukkitListener;
 import be.garagepoort.tubingexample.broadcasting.BroadcastedMessage;
 import be.garagepoort.tubingexample.broadcasting.MessageBroadcastedEvent;
 import be.garagepoort.tubingexample.broadcasting.bungee.BroadcastedMessageReceivedBungeeEvent;
@@ -10,7 +10,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
-@IocListener
+@IocBukkitListener
 public class GuiBroadcaster implements Listener {
 
     @ConfigProperty("tubing-example.broadcast-prefix")

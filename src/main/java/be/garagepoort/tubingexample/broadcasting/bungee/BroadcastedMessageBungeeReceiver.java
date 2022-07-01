@@ -1,6 +1,6 @@
 package be.garagepoort.tubingexample.broadcasting.bungee;
 
-import be.garagepoort.mcioc.IocMessageListener;
+import be.garagepoort.mcioc.tubingbukkit.annotations.IocBukkitMessageListener;
 import be.garagepoort.tubingexample.common.Constants;
 import be.garagepoort.tubingexample.common.bungee.BungeeService;
 import org.bukkit.Bukkit;
@@ -11,7 +11,7 @@ import java.util.Optional;
 
 import static be.garagepoort.tubingexample.common.Constants.BUNGEE_REPORT_MESSAGE_BROADCAST_CHANNEL;
 
-@IocMessageListener(
+@IocBukkitMessageListener(
     channel = Constants.BUNGEE_CORD_CHANNEL,
     conditionalOnProperty = "tubing-example.broadcast-on-bungee=true")
 public class BroadcastedMessageBungeeReceiver implements PluginMessageListener {

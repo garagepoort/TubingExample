@@ -1,7 +1,7 @@
 package be.garagepoort.tubingexample.broadcasting.gui;
 
-import be.garagepoort.mcioc.IocCommandHandler;
 import be.garagepoort.mcioc.configuration.ConfigProperty;
+import be.garagepoort.mcioc.tubingbukkit.annotations.IocBukkitCommandHandler;
 import be.garagepoort.mcioc.tubinggui.GuiActionService;
 import be.garagepoort.tubingexample.broadcasting.BroadcastingService;
 import be.garagepoort.tubingexample.common.JavaUtils;
@@ -14,7 +14,7 @@ import org.bukkit.entity.Player;
 
 import java.util.List;
 
-@IocCommandHandler("broadcast")
+@IocBukkitCommandHandler("broadcast")
 public class BroadcastCmd implements CommandExecutor {
 
     @ConfigProperty("tubing-example.broadcast-messages")

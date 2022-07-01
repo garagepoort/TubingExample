@@ -1,6 +1,6 @@
 package be.garagepoort.tubingexample.broadcasting.bungee;
 
-import be.garagepoort.mcioc.IocListener;
+import be.garagepoort.mcioc.tubingbukkit.annotations.IocBukkitListener;
 import be.garagepoort.tubingexample.broadcasting.MessageBroadcastedEvent;
 import be.garagepoort.tubingexample.common.Constants;
 import be.garagepoort.tubingexample.common.bungee.BungeeService;
@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
-@IocListener(conditionalOnProperty = "tubing-example.broadcast-on-bungee=true")
+@IocBukkitListener(conditionalOnProperty = "tubing-example.broadcast-on-bungee=true")
 public class BroadcastedMessageBungeeSender implements Listener {
 
     private final BungeeService bungeeService;

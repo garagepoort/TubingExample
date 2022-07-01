@@ -1,7 +1,7 @@
 package be.garagepoort.tubingexample.common.permissions;
 
 import be.garagepoort.mcioc.IocBean;
-import be.garagepoort.mcioc.permissions.TubingPermissionService;
+import be.garagepoort.mcioc.tubingbukkit.permissions.TubingPermissionService;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 

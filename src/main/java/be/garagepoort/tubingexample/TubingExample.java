@@ -1,8 +1,8 @@
 package be.garagepoort.tubingexample;
 
-import be.garagepoort.mcioc.TubingPlugin;
+import be.garagepoort.mcioc.tubingbukkit.TubingBukkitPlugin;
 
-public class TubingExample extends TubingPlugin {
+public class TubingExample extends TubingBukkitPlugin {
 
     @Override
     protected void enable() {

@@ -10,7 +10,7 @@
     <version>1.0.0</version>
 
     <properties>
-        <tubing.version>7.0.3</tubing.version>
+        <tubing.version>7.4.0</tubing.version>
     </properties>
     <build>
         <resources>

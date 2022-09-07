@@ -2,10 +2,10 @@ package be.garagepoort.tubingexample.broadcasting.gui;
 
 import be.garagepoort.mcioc.configuration.ConfigProperty;
 import be.garagepoort.mcioc.tubingbukkit.annotations.IocBukkitCommandHandler;
+import be.garagepoort.mcioc.tubingbukkit.messaging.Messages;
 import be.garagepoort.mcioc.tubinggui.GuiActionService;
 import be.garagepoort.tubingexample.broadcasting.BroadcastingService;
 import be.garagepoort.tubingexample.common.JavaUtils;
-import be.garagepoort.tubingexample.common.MessageService;
 import be.garagepoort.tubingexample.common.exceptions.BusinessException;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -20,14 +20,14 @@ public class BroadcastCmd implements CommandExecutor {
     @ConfigProperty("tubing-example.broadcast-messages")
     private List<String> predefinedMessages;
 
-    private final MessageService messageService;
+    private final Messages messages;
     private final BroadcastingService broadcastingService;
     private final GuiActionService guiActionService;
 
-    public BroadcastCmd(MessageService messageService, BroadcastingService broadcastingService, GuiActionService guiActionService) {
-        this.messageService = messageService;
+    public BroadcastCmd(Messages messages, BroadcastingService broadcastingService, GuiActionService guiActionService) {
         this.broadcastingService = broadcastingService;
         this.guiActionService = guiActionService;
+        this.messages = messages;
     }
 
     @Override
@@ -46,7 +46,7 @@ public class BroadcastCmd implements CommandExecutor {
             broadcastingService.broadcast(sender, message);
             return true;
         } catch (BusinessException e) {
-            messageService.sendMessage(sender, "&6[Broadcasts] &C" + e.getMessage());
+            messages.send(sender, "&C" + e.getMessage());
             return false;
         }
     }

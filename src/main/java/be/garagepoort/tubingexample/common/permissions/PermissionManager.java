@@ -14,7 +14,7 @@ public class PermissionManager implements TubingPermissionService {
         }
     }
 
-    private boolean has(CommandSender player, String permission) {
+    public boolean has(CommandSender player, String permission) {
         if (!(player instanceof Player)) {
             return true;
         }

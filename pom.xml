@@ -10,7 +10,7 @@
     <version>1.0.0</version>
 
     <properties>
-        <tubing.version>7.4.0</tubing.version>
+        <tubing.version>7.5.4</tubing.version>
     </properties>
     <build>
         <resources>
@@ -137,11 +137,6 @@
                     <artifactId>*</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>be.garagepoort.mcioc</groupId>
-            <artifactId>tubing-gui</artifactId>
-            <version>1.0.1</version>
         </dependency>
     </dependencies>
 </project>
